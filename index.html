@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="title">
+        <h1>GRÁFICOS</h1>
+    </div>
+    <div class="container">
+        <div class="sessao">
+            <div class="chart">
+                <canvas id="Linhas"></canvas>
+            </div>
+            <div class="chart">
+                <canvas id="Barras"></canvas>
+            </div>  
+        </div>
+    </div>
+</body>
+<script>
+    const ctx = document.getElementById('Linhas');
+    const ctz = document.getElementById('Barras')
+  
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['12:00	', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'Umidade',
+          data: [80, 82, 80, 85, 80, 83],
+          borderWidth: 1
+        },
+        {
+        label: 'Temperatura',
+          data: [30, 29, 28, 25, 22, 23],
+          borderWidth: 1
+        },]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    new Chart(ctz, {
+      type: 'bar',
+      data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+        datasets: [{
+          label: 'Umidade Média',
+          data: [90, 89, 93, 87, 88 , 82],
+          borderWidth: 1
+        },
+        {
+        label: 'Temperatura Média',
+          data: [22, 24, 27, 23, 20, 18],
+          borderWidth: 1
+        },]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</html>

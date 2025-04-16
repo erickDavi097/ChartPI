@@ -1,0 +1,18 @@
+.chart{
+    width: 600px;
+   
+}
+.container{
+    display: flex;
+    justify-content: center;
+    
+}
+.title{
+    font-family: Arial;
+    text-align: center;
+}
+.sessao{
+    border-radius: 5px;
+    border-style: solid;
+    display: flex;
+}
